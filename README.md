@@ -110,5 +110,5 @@ CORS/UI** → UI uses `API_URL`; API has CORS enabled.
 
 Uses FAISS, Hugging Face Transformers, and BioGPT. See code for notices.
 
-Googel Drive mp4 File: https://drive.google.com/file/d/1Ja4L6xLPoWVB2ybL5Y-NGPxX1vzARYs2/view?usp=sharing
+
 
