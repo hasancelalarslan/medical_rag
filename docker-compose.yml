@@ -1,0 +1,31 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile  # This is your API Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+      - ./.cache:/cache/huggingface
+      - ./data:/app/data
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+      --reload
+    restart: unless-stopped
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui  # We'll create this for Streamlit
+    environment:
+      API_URL: http://api:8000/query
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    restart: unless-stopped
