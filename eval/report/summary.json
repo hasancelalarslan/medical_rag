@@ -1,0 +1,74 @@
+{
+  "title": "Medical RAG Perf — Baykar Submission",
+  "rows": 100,
+  "latency": {
+    "retrieval_time_ms": {
+      "count": 100,
+      "mean": 27.6083,
+      "std": 11.307385821223223,
+      "min": 13.9,
+      "max": 56.09,
+      "p50": 23.035,
+      "p75": 34.144999999999996,
+      "p90": 46.58900000000002,
+      "p95": 49.9605,
+      "p99": 55.6148,
+      "p99.9": 56.042480000000005
+    },
+    "generation_time_ms": {
+      "count": 100,
+      "mean": 3526.8769,
+      "std": 3426.781723397245,
+      "min": 961.11,
+      "max": 35371.55,
+      "p50": 3062.625,
+      "p75": 3928.3424999999997,
+      "p90": 4828.270000000002,
+      "p95": 5232.6475,
+      "p99": 9243.559100000135,
+      "p99.9": 32758.75091000028
+    },
+    "total_time_ms": {
+      "count": 100,
+      "mean": 3558.573,
+      "std": 3426.360979962123,
+      "min": 987.34,
+      "max": 35392.64,
+      "p50": 3104.3999999999996,
+      "p75": 3960.8250000000003,
+      "p90": 4849.537000000002,
+      "p95": 5257.1585,
+      "p99": 9298.289300000133,
+      "p99.9": 32783.20493000028
+    }
+  },
+  "by_bucket": [
+    {
+      "bucket": "Long",
+      "retrieval_time_ms_mean": 28.850857142857144,
+      "retrieval_time_ms_p95": 50.128,
+      "generation_time_ms_mean": 3025.140285714286,
+      "generation_time_ms_p95": 5058.054999999999,
+      "total_time_ms_mean": 3058.1380000000004,
+      "total_time_ms_p95": 5080.507
+    },
+    {
+      "bucket": "Medium",
+      "retrieval_time_ms_mean": 26.85314285714286,
+      "retrieval_time_ms_p95": 49.711,
+      "generation_time_ms_mean": 4095.821714285714,
+      "generation_time_ms_p95": 6389.695999999989,
+      "total_time_ms_mean": 4126.970285714286,
+      "total_time_ms_p95": 6418.599999999989
+    },
+    {
+      "bucket": "Short",
+      "retrieval_time_ms_mean": 27.039666666666665,
+      "retrieval_time_ms_p95": 45.23449999999998,
+      "generation_time_ms_mean": 3448.4673333333326,
+      "generation_time_ms_p95": 5499.213499999999,
+      "total_time_ms_mean": 3479.283666666667,
+      "total_time_ms_p95": 5527.416499999998
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.venv/
+.conda/
+
+# Env & secrets (never copy to image)
+.env
+.env.*
+*.pem
+*.key
+
+# VCS / IDE
+.git
+.gitignore
+.gitattributes
+.github/
+.idea/
+.vscode/
+*.code-workspace
+
+# Caches (keep data for dev mode mounting)
+.cache/
+cache/
+datasets/
+models/
+checkpoints/
+logs/
+wandb/
+
+# Eval / outputs
+eval/*.pdf
+eval/*.png
+eval/*.jpg
+eval/figures/
+eval/perf_results.csv
+eval/quality_report.md
+eval/manual_summary.md
+
+# Misc
+*.ipynb
+.DS_Store
