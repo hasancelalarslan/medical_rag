@@ -115,6 +115,8 @@ def _filter_sentences_not_in_context(answer: str, context_text: str, min_overlap
     cleaned = " ".join(kept).strip()
     return cleaned if cleaned else answer  # fall back to original if all dropped
 
+# ...existing code...
+
 class Generator:
     def __init__(self, model_id: str = "microsoft/BioGPT",
                  offload_folder: Optional[str] = None,
@@ -142,18 +144,22 @@ class Generator:
         )
         self.model.eval()
 
+        # --------- UPDATED: Remove device argument from pipeline ----------
         self.pipe = pipeline(
             "text-generation",
             model=self.model,
-            tokenizer=self.tokenizer,
-            device=0 if self.device == "cuda" else -1,
+            tokenizer=self.tokenizer
+            # device argument removed for accelerate compatibility
         )
+        # ---------------------------------------------------------------
 
         # longer answers
         self.max_input_tokens = min(getattr(self.tokenizer, "model_max_length", 1024), 1024) - 96
         self.max_new_tokens = 512
 
         print(f"[Generator] Loaded on {self.device.upper()} with {torch_dtype} precision.")
+
+# ...rest of the code unchanged...
 
     def _truncate_prompt(self, prompt: str) -> str:
         toks = self.tokenizer(prompt, add_special_tokens=False, return_tensors="pt")["input_ids"][0]
