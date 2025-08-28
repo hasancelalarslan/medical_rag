@@ -32,6 +32,9 @@ checkpoints/
 logs/
 wandb/
 
+# Data (since you mount it as a volume)
+data/
+
 # Eval / outputs
 eval/*.pdf
 eval/*.png
@@ -44,3 +47,7 @@ eval/manual_summary.md
 # Misc
 *.ipynb
 .DS_Store
+*.log
+*.tar
+*.zip
+*.gz

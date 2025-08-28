@@ -2,36 +2,35 @@
 
 FROM python:3.11-slim AS base
 
-
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     PIP_NO_CACHE_DIR=1 \
     UVICORN_HOST=0.0.0.0 \
     UVICORN_PORT=8000 \
     HF_HOME=/cache/huggingface \
-    NLTK_DATA=/home/appuser/nltk_data
-
+    NLTK_DATA=/usr/local/share/nltk_data
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgomp1 git curl ca-certificates \
+    libgomp1 git curl ca-certificates wget \
  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
 COPY requirements.txt .
+
 RUN pip install --upgrade pip \
  && pip install --no-cache-dir -r requirements.txt \
  && pip install --no-cache-dir rouge-score
 
-RUN python -m nltk.downloader -d /usr/local/share/nltk_data punkt wordnet omw-1.4
+# Download NLTK data using a Python script to ensure proper download
+RUN python -c "import nltk; nltk.download('punkt', download_dir='/usr/local/share/nltk_data'); nltk.download('wordnet', download_dir='/usr/local/share/nltk_data'); nltk.download('omw-1.4', download_dir='/usr/local/share/nltk_data')"
 
 COPY . .
 
 RUN mkdir -p /cache/huggingface
 
 RUN useradd -m appuser && \
-    mkdir -p /home/appuser/nltk_data && \
-    chown -R appuser:appuser /app /cache /home/appuser/nltk_data
+    chown -R appuser:appuser /app /cache /usr/local/share/nltk_data
 USER appuser
 
 EXPOSE 8000
