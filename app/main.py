@@ -12,6 +12,8 @@ from app.config import get_settings
 from app.retrieval_faiss import FaissStore
 from app.generation_model import Generator
 
+
+
 S = get_settings()
 app = FastAPI(title="Medical RAG", version="0.1.0")
 

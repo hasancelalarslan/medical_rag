@@ -1,4 +1,4 @@
-# app/config.py
+python app/main.pypython app/main.py# app/config.py
 
 import os
 import pathlib

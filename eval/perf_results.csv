@@ -1,0 +1,101 @@
+Query,Query_Length,Retrieval_Time_MS,Generation_Time_MS,Total_Time_MS
+What is diabetes?,Short,9.6,349.7,362.14
+What is hypertension?,Short,9.7,289.55,302.22
+What is asthma?,Short,9.14,273.78,285.96
+What is COPD?,Short,9.16,214.46,226.53
+What is migraine?,Short,9.42,365.14,377.43
+What is obesity?,Short,9.18,214.11,226.02
+What is influenza?,Short,9.26,258.08,269.9
+What is anemia?,Short,9.3,260.18,272.1
+What is HIV?,Short,9.27,229.09,240.99
+What is cancer?,Short,9.11,259.41,271.25
+Define stroke.,Short,9.5,321.05,333.2
+Explain epilepsy.,Short,9.45,188.19,200.26
+Describe gout.,Short,9.55,468.27,480.51
+What is psoriasis?,Short,9.45,553.51,565.62
+What is lupus?,Short,9.25,303.06,314.88
+Explain multiple sclerosis.,Short,9.24,273.18,285.02
+What is pneumonia?,Short,9.08,321.21,333.0
+What is tuberculosis?,Short,9.19,218.47,230.52
+Define ulcerative colitis.,Short,9.72,275.02,287.37
+What is Crohn's disease?,Short,9.49,392.73,404.78
+Explain kidney stones.,Short,9.18,428.35,440.01
+What is hepatitis B?,Short,9.2,199.04,210.77
+What is hepatitis C?,Short,9.18,247.18,258.84
+Define metabolic syndrome.,Short,9.11,230.11,241.77
+What is GERD?,Short,9.38,263.64,275.76
+What is meningitis?,Short,9.23,217.51,229.43
+Describe eclampsia.,Short,9.45,97.42,109.45
+What is endometriosis?,Short,9.24,233.02,244.87
+Define polycystic ovary syndrome.,Short,9.57,394.54,406.65
+What is cataract?,Short,9.24,169.93,181.8
+What are the current treatment options for type 2 diabetes?,Medium,9.93,304.37,316.96
+What are the complications of hypertension?,Medium,9.2,319.45,331.21
+What is the first-line treatment for an asthma attack?,Medium,9.49,284.02,296.04
+What is the initial management of a COPD exacerbation?,Medium,9.57,241.57,253.97
+Which drugs are used in migraine treatment?,Medium,9.1,167.83,179.55
+What diseases are caused by obesity?,Medium,9.18,282.01,293.76
+What are the ways to prevent influenza?,Medium,9.03,214.4,226.01
+What are the treatment methods for iron deficiency anemia?,Medium,9.19,276.5,288.47
+Which drug classes are used in HIV treatment?,Medium,9.19,322.88,334.73
+What are the cancer screening methods?,Medium,9.24,332.79,344.57
+How is rheumatoid arthritis treated?,Medium,9.44,390.87,402.94
+What are the risk factors for stroke?,Medium,9.23,230.2,242.15
+Describe management of Parkinson's disease.,Medium,9.51,217.9,230.03
+What are the symptoms of Alzheimer's disease?,Medium,9.45,185.32,197.44
+How to manage chronic kidney disease?,Medium,9.45,274.97,287.1
+What are the causes of anemia?,Medium,9.42,159.11,171.17
+What is the treatment for hepatitis B?,Medium,9.2,275.38,287.09
+Describe the therapy for ulcerative colitis.,Medium,9.24,155.19,167.14
+How is Crohn's disease diagnosed?,Medium,9.28,290.23,302.14
+Explain treatment options for pneumonia.,Medium,9.21,214.63,226.37
+What is the role of insulin in type 1 diabetes?,Medium,9.12,237.32,248.98
+What are the complications of lupus?,Medium,9.22,261.8,273.59
+How to prevent tuberculosis?,Medium,9.13,228.97,240.68
+What is the recommended therapy for GERD?,Medium,9.22,171.14,183.12
+Explain the use of statins in cardiovascular disease.,Medium,9.37,203.29,215.48
+What is the first-line drug for malaria?,Medium,9.43,67.49,79.56
+Describe management of meningitis.,Medium,9.87,186.54,199.08
+What is the therapy for endometriosis?,Medium,9.12,258.82,270.41
+What are the guidelines for cervical cancer screening?,Medium,9.33,275.39,287.38
+Explain rehabilitation after myocardial infarction.,Medium,9.31,356.32,368.48
+Describe pain management in cancer patients.,Medium,9.17,155.53,167.32
+What are the treatments for cataracts?,Medium,9.16,201.81,213.5
+How is polycystic ovary syndrome managed?,Medium,9.37,306.36,318.3
+Explain palliative care in terminal illness.,Medium,9.28,347.61,359.72
+What are the side effects of chemotherapy?,Medium,9.17,229.73,241.65
+What are the device therapies available for advanced stage heart failure?,Long,9.77,408.19,420.55
+How should insulin pump therapy be managed in patients with type 1 diabetes?,Long,9.45,264.12,276.09
+How should lifestyle changes be implemented in patients with hypertension?,Long,9.21,317.67,329.39
+What are the indications for long-term oxygen therapy in patients with COPD?,Long,21.56,394.84,419.24
+What is the stepwise approach to asthma control according to clinical guidelines?,Long,9.58,392.35,404.54
+How should treatment be planned for multidrug-resistant tuberculosis?,Long,9.54,200.7,212.72
+What are the management strategies for stroke rehabilitation?,Long,9.09,893.02,904.76
+How is palliative care integrated into cancer treatment plans?,Long,9.42,313.46,325.64
+What are the current recommendations for the management of chronic kidney disease?,Long,9.44,435.07,446.96
+How should anticoagulation be managed in patients with atrial fibrillation?,Long,9.6,493.83,505.87
+What is the latest guideline for breast cancer screening in high-risk populations?,Long,9.58,661.88,674.45
+How should biologic therapies be used in rheumatoid arthritis?,Long,9.74,318.48,330.88
+Describe the role of continuous glucose monitoring in type 1 diabetes management.,Long,9.46,185.83,197.89
+What are the surgical options for advanced colorectal cancer?,Long,9.22,169.23,181.03
+How should statin therapy be adjusted in elderly patients?,Long,9.22,507.44,519.28
+What are the recommendations for vaccination in immunocompromised patients?,Long,9.45,529.25,541.32
+Describe the stepwise pharmacologic therapy for heart failure.,Long,9.53,288.36,300.68
+How should acute ischemic stroke be managed within the first 24 hours?,Long,9.71,303.67,316.03
+What are the strategies for preventing diabetic foot ulcers?,Long,9.42,260.23,272.27
+Explain multidisciplinary care in amyotrophic lateral sclerosis.,Long,9.41,155.84,167.84
+How should depression be managed in patients with chronic illness?,Long,9.33,362.67,374.55
+What are the updates in the management of severe sepsis?,Long,9.28,437.63,449.55
+Describe non-pharmacologic interventions for dementia care.,Long,9.31,170.39,182.25
+How should anticoagulant reversal be performed in bleeding patients?,Long,9.34,421.58,433.47
+What are the dietary recommendations for chronic kidney disease?,Long,9.3,302.61,314.52
+How should antiretroviral therapy be modified in drug-resistant HIV?,Long,9.61,185.4,197.68
+Describe the post-operative care after coronary artery bypass surgery.,Long,9.42,276.1,288.14
+What are the strategies for reducing hospital readmission in COPD?,Long,9.46,379.95,392.07
+Explain guideline-based management of gestational diabetes.,Long,9.39,214.68,226.6
+How should pediatric asthma be treated according to the latest guidelines?,Long,9.29,243.74,255.43
+Describe infection control measures in tuberculosis wards.,Long,9.28,288.09,299.84
+What are the surgical interventions for severe obesity?,Long,9.28,184.89,196.99
+How should cancer pain be assessed and managed?,Long,9.23,126.99,139.01
+Explain the role of telemedicine in rural healthcare delivery.,Long,9.37,185.79,197.75
+What are the ethical considerations in end-of-life care?,Long,10.61,497.28,510.58

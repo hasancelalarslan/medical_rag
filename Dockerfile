@@ -22,9 +22,6 @@ RUN pip install --upgrade pip \
  && pip install --no-cache-dir -r requirements.txt \
  && pip install --no-cache-dir rouge-score
 
-# Download NLTK data using a Python script to ensure proper download
-RUN python -c "import nltk; nltk.download('punkt', download_dir='/usr/local/share/nltk_data'); nltk.download('wordnet', download_dir='/usr/local/share/nltk_data'); nltk.download('omw-1.4', download_dir='/usr/local/share/nltk_data')"
-
 COPY . .
 
 RUN mkdir -p /cache/huggingface

@@ -1,45 +1,45 @@
-# Medical RAG Perf — Baykar Submission
+# Medical RAG Perf
 
-**Input CSV:** `/app/eval/perf_results.csv`
+**Input CSV:** `/home/arslanhasancelal/medical_rag/eval/perf_results.csv`
 
 ## Overall Latency Summary
 
-|                    |   count |      mean |       std |    min |      max |      p50 |      p75 |      p90 |       p95 |       p99 |      p99.9 |
-|:-------------------|--------:|----------:|----------:|-------:|---------:|---------:|---------:|---------:|----------:|----------:|-----------:|
-| retrieval_time_ms  |     100 |   27.6083 |   11.3074 |  13.9  |    56.09 |   23.035 |   34.145 |   46.589 |   49.9605 |   55.6148 |    56.0425 |
-| generation_time_ms |     100 | 3526.88   | 3426.78   | 961.11 | 35371.6  | 3062.62  | 3928.34  | 4828.27  | 5232.65   | 9243.56   | 32758.8    |
-| total_time_ms      |     100 | 3558.57   | 3426.36   | 987.34 | 35392.6  | 3104.4   | 3960.83  | 4849.54  | 5257.16   | 9298.29   | 32783.2    |
+|                    |   count |     mean |       std |   min |    max |    p50 |      p75 |     p90 |      p95 |      p99 |   p99.9 |
+|:-------------------|--------:|---------:|----------:|------:|-------:|-------:|---------:|--------:|---------:|---------:|--------:|
+| retrieval_time_ms  |     100 |   9.4856 |   1.23363 |  9.03 |  21.56 |   9.31 |   9.4525 |   9.601 |   9.7415 |  10.7195 |  20.476 |
+| generation_time_ms |     100 | 289.079  | 119.384   | 67.49 | 893.02 | 273.48 | 325.358  | 429.022 | 497.788  | 664.191  | 870.137 |
+| total_time_ms      |     100 | 301.21   | 119.552   | 79.56 | 904.76 | 285.49 | 337.19   | 440.705 | 511.015  | 676.753  | 881.959 |
 
 ## Latency by Query Length
 
 | bucket   |   retrieval_time_ms_mean |   retrieval_time_ms_p95 |   generation_time_ms_mean |   generation_time_ms_p95 |   total_time_ms_mean |   total_time_ms_p95 |
 |:---------|-------------------------:|------------------------:|--------------------------:|-------------------------:|---------------------:|--------------------:|
-| Long     |                  28.8509 |                 50.128  |                   3025.14 |                  5058.05 |              3058.14 |             5080.51 |
-| Medium   |                  26.8531 |                 49.711  |                   4095.82 |                  6389.7  |              4126.97 |             6418.6  |
-| Short    |                  27.0397 |                 45.2345 |                   3448.47 |                  5499.21 |              3479.28 |             5527.42 |
+| Long     |                  9.79714 |                  10.022 |                   336.321 |                  569.039 |              348.739 |             581.259 |
+| Medium   |                  9.30914 |                   9.66  |                   246.507 |                  350.223 |              258.46  |             362.348 |
+| Short    |                  9.328   |                   9.655 |                   283.631 |                  450.306 |              295.635 |             462.285 |
 
 ## Top 20 Slowest Queries
 
-| query                                                                     | query_length   |   retrieval_time_ms |   generation_time_ms |   total_time_ms |
-|:--------------------------------------------------------------------------|:---------------|--------------------:|---------------------:|----------------:|
-| What are the ways to prevent influenza?                                   | Medium         |               15.81 |             35371.6  |        35392.6  |
-| Explain rehabilitation after myocardial infarction.                       | Medium         |               49.97 |              8979.64 |         9034.71 |
-| What is HIV?                                                              | Short          |               21.89 |              6111.21 |         6136.69 |
-| Define stroke.                                                            | Short          |               26.93 |              5719.34 |         5750.27 |
-| What are the cancer screening methods?                                    | Medium         |               13.96 |              5279.72 |         5297.41 |
-| Explain multiple sclerosis.                                               | Short          |               21.04 |              5230.17 |         5255.04 |
-| What are the ethical considerations in end-of-life care?                  | Long           |               32.07 |              5170.05 |         5206.35 |
-| How should acute ischemic stroke be managed within the first 24 hours?    | Long           |               23.63 |              5130.33 |         5157.71 |
-| What is diabetes?                                                         | Short          |               25.44 |              5121.63 |         5151.09 |
-| How should depression be managed in patients with chronic illness?        | Long           |               15.42 |              5027.08 |         5047.42 |
-| What is hepatitis C?                                                      | Short          |               17.93 |              4806.18 |         4827.55 |
-| What are the complications of lupus?                                      | Medium         |               17.03 |              4764.36 |         4785.11 |
-| Explain kidney stones.                                                    | Short          |               48.38 |              4631.74 |         4685.14 |
-| How should cancer pain be assessed and managed?                           | Long           |               19.89 |              4501.6  |         4525.63 |
-| What are the device therapies available for advanced stage heart failure? | Long           |               49.96 |              4437.69 |         4492.09 |
-| What is the therapy for endometriosis?                                    | Medium         |               17.69 |              4276.82 |         4297.91 |
-| What is influenza?                                                        | Short          |               20.78 |              4235.91 |         4260.53 |
-| What are the treatment methods for iron deficiency anemia?                | Medium         |               25.64 |              4202.61 |         4233.5  |
-| Describe non-pharmacologic interventions for dementia care.               | Long           |               27.33 |              4156.89 |         4188.53 |
-| How should biologic therapies be used in rheumatoid arthritis?            | Long           |               49.58 |              4115.28 |         4170.58 |
+| query                                                                              | query_length   |   retrieval_time_ms |   generation_time_ms |   total_time_ms |
+|:-----------------------------------------------------------------------------------|:---------------|--------------------:|---------------------:|----------------:|
+| What are the management strategies for stroke rehabilitation?                      | Long           |                9.09 |               893.02 |          904.76 |
+| What is the latest guideline for breast cancer screening in high-risk populations? | Long           |                9.58 |               661.88 |          674.45 |
+| What is psoriasis?                                                                 | Short          |                9.45 |               553.51 |          565.62 |
+| What are the recommendations for vaccination in immunocompromised patients?        | Long           |                9.45 |               529.25 |          541.32 |
+| How should statin therapy be adjusted in elderly patients?                         | Long           |                9.22 |               507.44 |          519.28 |
+| What are the ethical considerations in end-of-life care?                           | Long           |               10.61 |               497.28 |          510.58 |
+| How should anticoagulation be managed in patients with atrial fibrillation?        | Long           |                9.6  |               493.83 |          505.87 |
+| Describe gout.                                                                     | Short          |                9.55 |               468.27 |          480.51 |
+| What are the updates in the management of severe sepsis?                           | Long           |                9.28 |               437.63 |          449.55 |
+| What are the current recommendations for the management of chronic kidney disease? | Long           |                9.44 |               435.07 |          446.96 |
+| Explain kidney stones.                                                             | Short          |                9.18 |               428.35 |          440.01 |
+| How should anticoagulant reversal be performed in bleeding patients?               | Long           |                9.34 |               421.58 |          433.47 |
+| What are the device therapies available for advanced stage heart failure?          | Long           |                9.77 |               408.19 |          420.55 |
+| What are the indications for long-term oxygen therapy in patients with COPD?       | Long           |               21.56 |               394.84 |          419.24 |
+| Define polycystic ovary syndrome.                                                  | Short          |                9.57 |               394.54 |          406.65 |
+| What is Crohn's disease?                                                           | Short          |                9.49 |               392.73 |          404.78 |
+| What is the stepwise approach to asthma control according to clinical guidelines?  | Long           |                9.58 |               392.35 |          404.54 |
+| How is rheumatoid arthritis treated?                                               | Medium         |                9.44 |               390.87 |          402.94 |
+| What are the strategies for reducing hospital readmission in COPD?                 | Long           |                9.46 |               379.95 |          392.07 |
+| What is migraine?                                                                  | Short          |                9.42 |               365.14 |          377.43 |
 
