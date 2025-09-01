@@ -286,10 +286,10 @@ def summarize_manual(df_rows: List[Dict], headers: List[str]) -> Dict[str, Dict[
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--in", dest="in_csv", default=os.getenv("PERF_INPUT", "results/perf_results.csv"),
+    ap.add_argument("--in", dest="in_csv", default=os.getenv("PERF_INPUT", "tests/results/perf_results.csv"),
                     help="Input perf CSV (default: results/perf_results.csv)")
-    ap.add_argument("--outdir", dest="outdir", default=os.getenv("OUT_DIR", "results"),
-                    help="Output directory for metrics_report.* (default: results)")
+    ap.add_argument("--outdir", dest="outdir", default=os.getenv("OUT_DIR", "tests/results"),
+                    help="Output directory for metrics_report.* (default: tests/results)")
     args = ap.parse_args()
 
     in_csv = args.in_csv
