@@ -180,7 +180,7 @@ class Generator:
             "text-generation",
             model=self.model,
             tokenizer=self.tokenizer,
-            device=(0 if self.device == "cuda" else -1),  # GPU varsa 0, yoksa CPU
+            device=(0 if self.device == "cuda" else -1),  
         )
 
 
