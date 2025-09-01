@@ -1,4 +1,4 @@
-# Python cache
+# ---------- Python cache ----------
 __pycache__/
 *.py[cod]
 *.pyo
@@ -7,14 +7,18 @@ __pycache__/
 *.egg-info/
 .venv/
 .conda/
+.mypy_cache/
+.pytest_cache/
 
-# Env & secrets (never copy to image)
+# ---------- Env & secrets (never copy to image) ----------
 .env
 .env.*
+!.env.example        # keep a template in build context
+
 *.pem
 *.key
 
-# VCS / IDE
+# ---------- VCS / IDE ----------
 .git
 .gitignore
 .gitattributes
@@ -23,19 +27,23 @@ __pycache__/
 .vscode/
 *.code-workspace
 
-# Caches (keep data for dev mode mounting)
+# ---------- Caches (host only) ----------
 .cache/
 cache/
+.huggingface/
 datasets/
 models/
 checkpoints/
 logs/
 wandb/
+*.pt
+*.bin
+*.safetensors
 
-# Data (since you mount it as a volume)
+# ---------- Data (mounted as a volume) ----------
 data/
 
-# Eval / outputs
+# ---------- Eval / outputs ----------
 eval/*.pdf
 eval/*.png
 eval/*.jpg
@@ -44,7 +52,10 @@ eval/perf_results.csv
 eval/quality_report.md
 eval/manual_summary.md
 
-# Misc
+# ---------- Build artifacts / misc ----------
+build/
+dist/
+wheelhouse/
 *.ipynb
 .DS_Store
 *.log

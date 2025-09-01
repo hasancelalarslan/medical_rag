@@ -1,0 +1,46 @@
+# ===== Base (CUDA 12.1 + PyTorch 2.3.1, Ubuntu 22.04) =====
+FROM pytorch/pytorch:2.3.1-cuda12.1-cudnn8-runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    HF_HOME=/app/.cache/huggingface \
+    TRANSFORMERS_CACHE=/app/.cache/huggingface/hub \
+    MPLCONFIGDIR=/app/.cache/matplotlib
+
+WORKDIR /app
+
+# System deps for FAISS/numpy/matplotlib/etc.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      build-essential git curl ca-certificates libopenblas-base \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy only requirements first (better layer caching)
+COPY requirements.txt /app/requirements.txt
+
+# IMPORTANT: requirements.txt should NOT pin torch/torchvision
+# We'll ensure torch is present from base image (already installed).
+# Install the rest
+RUN pip install --upgrade pip \
+ && pip install --no-cache-dir -r requirements.txt
+
+# Copy the app
+COPY app /app/app
+COPY scripts /app/scripts
+# (optional) copy examples/eval folders if used at runtime
+# COPY examples /app/examples
+# COPY eval /app/eval
+
+# User for cache dirs
+RUN useradd -m appuser && chown -R appuser:appuser /app
+USER appuser
+
+# Expose FastAPI
+EXPOSE 8000
+
+# Healthcheck (simple)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=20s --retries=5 \
+  CMD python -c "import sys,requests;sys.exit(0 if requests.get('http://127.0.0.1:8000/health',timeout=2).ok else 1)" || exit 1
+
+# Default: start API
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1"]

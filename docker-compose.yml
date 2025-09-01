@@ -1,31 +1,112 @@
+# docker-compose.yml
+
+x-env-common: &env_common
+  ENV: "prod"
+  MODEL_NAME: "microsoft/BioGPT"
+  VECTOR_DB_PATH: "data/index"                 # matches your FAISS path
+  HF_HOME: "/app/.cache/huggingface"           # base cache dir
+  HF_HUB_CACHE: "/app/.cache/huggingface/hub"  # huggingface_hub cache
+  TORCH_HOME: "/app/.cache/torch"              # torch hub cache
+  SENTENCE_TRANSFORMERS_HOME: "/app/.cache/sentence-transformers"
+  TOKENIZERS_PARALLELISM: "false"
+
+x-health: &health_api
+  test: ["CMD", "sh", "-lc", "curl -fsS http://127.0.0.1:8000/health >/dev/null"]
+  interval: 30s
+  timeout: 5s
+  retries: 5
+  start_period: 20s
+
+networks:
+  appnet:
+
 services:
   api:
     build:
       context: .
-      dockerfile: Dockerfile  # This is your API Dockerfile
+      dockerfile: Dockerfile.gpu
+    image: medical-rag:gpu
     ports:
       - "8000:8000"
     env_file:
       - .env
+    environment:
+      <<: *env_common
     volumes:
-      - ./:/app
-      - ./.cache:/cache/huggingface
-      - ./data:/app/data
+      - /home/arslanhasancelal/hf_cache:/app/.cache   # host cache (writable, more space)
+      - ./data:/app/data:ro                           # FAISS/data
+    gpus: all
+    restart: unless-stopped
+    healthcheck: *health_api
+    networks: [appnet]
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+      --workers 1
+
+  api-cpu:
+    profiles: ["cpu"]
+    build:
+      context: .
+      dockerfile: Dockerfile.cpu
+    image: medical-rag:cpu
+    ports:
+      - "8001:8000"
+    env_file:
+      - .env
+    environment:
+      <<: *env_common
+      ENV: "prod"
+    volumes:
+      - /home/arslanhasancelal/hf_cache:/app/.cache
+      - ./data:/app/data:ro
+    restart: unless-stopped
+    healthcheck: *health_api
+    networks: [appnet]
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0
+      --port 8000
+      --workers 1
+
+  api-dev:
+    profiles: ["dev"]
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu
+    image: medical-rag:gpu-dev
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      <<: *env_common
+      ENV: "dev"
+    volumes:
+      - /home/arslanhasancelal/hf_cache:/app/.cache
+      - ./data:/app/data:ro
+      - ./:/app:cached
+    gpus: all
+    restart: unless-stopped
+    healthcheck: *health_api
+    networks: [appnet]
     command: >
       uvicorn app.main:app
       --host 0.0.0.0
       --port 8000
       --reload
-    restart: unless-stopped
 
   ui:
     build:
       context: .
-      dockerfile: Dockerfile.ui  # We'll create this for Streamlit
+      dockerfile: Dockerfile.ui
     environment:
       API_URL: http://api:8000/query
     ports:
       - "8501:8501"
     depends_on:
-      - api
+      api:
+        condition: service_healthy
     restart: unless-stopped
+    networks: [appnet]

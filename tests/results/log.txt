@@ -1,0 +1,207 @@
+
+[2025-09-01 21:44:47] Starting docker compose (detached, build if needed)...
+[2025-09-01 21:44:47] Waiting for health at http://127.0.0.1:8000/health ...
+[2025-09-01 21:44:47] Service is healthy.
+[2025-09-01 21:44:47] [1/100] Query: What is diabetes?
+[2025-09-01 21:44:48] Answer preview: Diabetes is a serious condition with a wide range of complications.
+[2025-09-01 21:44:48] [2/100] Query: What is hypertension?
+[2025-09-01 21:44:48] Answer preview: Hypertension is a major risk factor for cardiovascular disease.
+[2025-09-01 21:44:48] [3/100] Query: What is asthma?
+[2025-09-01 21:44:49] Answer preview: Asthma is a chronic condition that affects more than 1 million Americans and is a major cause of morbidity and mortality.
+[2025-09-01 21:44:49] [4/100] Query: What is COPD?
+[2025-09-01 21:44:49] Answer preview: COPD is a chronic lung disease that affects the lung tissue and can cause significant shortness of breath, cough, and wheezing.
+[2025-09-01 21:44:49] [5/100] Query: What is migraine?
+[2025-09-01 21:44:50] Answer preview: The diagnosis of migraine is easy, and the most important thing is to know the exact duration and type of migraine attacks.
+[2025-09-01 21:44:50] [6/100] Query: What is obesity?
+[2025-09-01 21:44:50] Answer preview: Obesity has a negative impact on patients' quality of life.
+[2025-09-01 21:44:50] [7/100] Query: What is influenza?
+[2025-09-01 21:44:50] Answer preview: The test is useful in detecting influenza in a patient with a history of chronic illness.
+[2025-09-01 21:44:50] [8/100] Query: What is anemia?
+[2025-09-01 21:44:51] Answer preview: In the absence of a clear history, you should have a hemoglobin level of less than 10.0 g / dL.
+[2025-09-01 21:44:51] [9/100] Query: What is HIV?
+[2025-09-01 21:44:51] Answer preview: The risk of HIV infection is lower among medical assistants compared with other health care providers.
+[2025-09-01 21:44:51] [10/100] Query: What is cancer?
+[2025-09-01 21:44:51] Answer preview: You should be able to determine the type of cancer, stage and stage of progression, and prognosis of your patient.
+[2025-09-01 21:44:51] [11/100] Query: Define stroke.
+[2025-09-01 21:44:52] Answer preview: The question is: "Is your patient with suspected stroke experiencing symptoms of a cardiac or pulmonary embolism?" QUESTION: Is your patient...
+[2025-09-01 21:44:52] [12/100] Query: Explain epilepsy.
+[2025-09-01 21:44:52] Answer preview: It is not necessary to do a routine electroencephalogram (EEG).
+[2025-09-01 21:44:52] [13/100] Query: Describe gout.
+[2025-09-01 21:44:53] Answer preview: If you have tophi, you don't know which drug is better.
+[2025-09-01 21:44:53] [14/100] Query: What is psoriasis?
+[2025-09-01 21:44:53] Answer preview: The severity of psoriasis is a predictor of the response to treatment with biologic agents.
+[2025-09-01 21:44:53] [15/100] Query: What is lupus?
+[2025-09-01 21:44:54] Answer preview: Lupus should be considered in the differential diagnosis of any patient presenting with subacute cutaneous lupus erythematosus, discoid lupu...
+[2025-09-01 21:44:54] [16/100] Query: Explain multiple sclerosis.
+[2025-09-01 21:44:54] Answer preview: Are you using your general medical knowledge to treat your patients?
+[2025-09-01 21:44:54] [17/100] Query: What is pneumonia?
+[2025-09-01 21:44:54] Answer preview: The answer to the question: "Is pneumonia a diagnosis?
+[2025-09-01 21:44:54] [18/100] Query: What is tuberculosis?
+[2025-09-01 21:44:54] Answer preview: Is it a tuberculosis?
+[2025-09-01 21:44:54] [19/100] Query: Define ulcerative colitis.
+[2025-09-01 21:44:55] Answer preview: Is it an inflammatory bowel disease?
+[2025-09-01 21:44:55] [20/100] Query: What is Crohn's disease?
+[2025-09-01 21:44:55] Answer preview: Crohn's disease is a common gastrointestinal disease.
+[2025-09-01 21:44:55] [21/100] Query: Explain kidney stones.
+[2025-09-01 21:44:55] Answer preview: The association between kidney stones and kidney stones is not strong enough to be used as a basis for a recommendation for a specific treat...
+[2025-09-01 21:44:55] [22/100] Query: What is hepatitis B?
+[2025-09-01 21:44:56] Answer preview: Hepatitis B virus is the most common infectious cause of liver disease, with an estimated incidence of 1 in 200 persons.
+[2025-09-01 21:44:56] [23/100] Query: What is hepatitis C?
+[2025-09-01 21:44:56] Answer preview: Hepatitis C: Hepatitis C is a highly prevalent infection in the United States, with an estimated 650,000 to 750,000 new cases each year.
+[2025-09-01 21:44:56] [24/100] Query: Define metabolic syndrome.
+[2025-09-01 21:44:56] Answer preview: Obesity and its co-morbidities are highly prevalent in the United States.
+[2025-09-01 21:44:56] [25/100] Query: What is GERD?
+[2025-09-01 21:44:57] Answer preview: GERD is the most common cause of upper gastrointestinal symptoms, and is diagnosed by history and physical examination.
+[2025-09-01 21:44:57] [26/100] Query: What is meningitis?
+[2025-09-01 21:44:57] Answer preview: Meningitis is a diagnosis of exclusion.
+[2025-09-01 21:44:57] [27/100] Query: Describe eclampsia.
+[2025-09-01 21:44:57] Answer preview: What is the treatment of eclampsia, including the administration of magnesium sulfate, and if not, what is the place of the magnesium sulfat...
+[2025-09-01 21:44:57] [28/100] Query: What is endometriosis?
+[2025-09-01 21:44:58] Answer preview: Endometriosis is a common, benign gynecological disease.
+[2025-09-01 21:44:58] [29/100] Query: Define polycystic ovary syndrome.
+[2025-09-01 21:44:58] Answer preview: The diagnosis of polycystic ovarian syndrome is based on clinical symptoms and signs, but it is not a disease.
+[2025-09-01 21:44:58] [30/100] Query: What is cataract?
+[2025-09-01 21:44:59] Answer preview: A) To know the risk factors, b) to know the potential causes, c) to know the symptoms, d) to know the methods of treatment, e) to know the p...
+[2025-09-01 21:44:59] [31/100] Query: What are the current treatment options for type 2 diabetes?
+[2025-09-01 21:45:00] Answer preview: Insulin degludec (IDeg) is an effective alternative to insulin glargine U100 (Gla-100) for type 2 diabetes.
+[2025-09-01 21:45:00] [32/100] Query: What are the complications of hypertension?
+[2025-09-01 21:45:00] Answer preview: There is a high prevalence of hypertension and hypertension is associated with many complications.
+[2025-09-01 21:45:00] [33/100] Query: What is the first-line treatment for an asthma attack?
+[2025-09-01 21:45:00] Answer preview: In addition to treating asthma attacks, you should consider using an inhaled corticosteroid in order to achieve asthma control.
+[2025-09-01 21:45:00] [34/100] Query: What is the initial management of a COPD exacerbation?
+[2025-09-01 21:45:01] Answer preview: Initial treatment should include a trial of oxygen, intravenous (IV) fluids, and bronchodilators.
+[2025-09-01 21:45:01] [35/100] Query: Which drugs are used in migraine treatment?
+[2025-09-01 21:45:01] Answer preview: For the first time, the triptans are approved by the US Food and Drug Administration for migraine treatment.
+[2025-09-01 21:45:01] [36/100] Query: What diseases are caused by obesity?
+[2025-09-01 21:45:01] Answer preview: In this case, you should consider: obesity (body mass index (BMI) ≥ 30 kg / m
+[2025-09-01 21:45:01] [37/100] Query: What are the ways to prevent influenza?
+[2025-09-01 21:45:02] Answer preview: The answer to the question "Does your general medical knowledge prevent influenza?" is: "You are not sure if your general medical knowledge ...
+[2025-09-01 21:45:02] [38/100] Query: What are the treatment methods for iron deficiency anemia?
+[2025-09-01 21:45:02] Answer preview: Iron is the most commonly used blood component, with oral iron being the most commonly used.
+[2025-09-01 21:45:02] [39/100] Query: Which drug classes are used in HIV treatment?
+[2025-09-01 21:45:03] Answer preview: The most common class of drugs is nucleoside reverse transcriptase inhibitors (NRTIs).
+[2025-09-01 21:45:03] [40/100] Query: What are the cancer screening methods?
+[2025-09-01 21:45:03] Answer preview: There are three different ways to screen for cancer.
+[2025-09-01 21:45:03] [41/100] Query: How is rheumatoid arthritis treated?
+[2025-09-01 21:45:03] Answer preview: Rheumatoid arthritis is a chronic systemic inflammatory disease.
+[2025-09-01 21:45:03] [42/100] Query: What are the risk factors for stroke?
+[2025-09-01 21:45:04] Answer preview: A high blood pressure (BP) is a risk factor for stroke, but the absolute risk of stroke is very small in the general population.
+[2025-09-01 21:45:04] [43/100] Query: Describe management of Parkinson's disease.
+[2025-09-01 21:45:04] Answer preview: The treatment of Parkinson disease is complex and requires a multidisciplinary approach.
+[2025-09-01 21:45:04] [44/100] Query: What are the symptoms of Alzheimer's disease?
+[2025-09-01 21:45:04] Answer preview: Alzheimer's disease is a progressive, neurodegenerative disorder characterized by memory loss and cognitive decline.
+[2025-09-01 21:45:04] [45/100] Query: How to manage chronic kidney disease?
+[2025-09-01 21:45:04] Answer preview: The most important factor in the management of chronic renal failure is early detection and treatment.
+[2025-09-01 21:45:04] [46/100] Query: What are the causes of anemia?
+[2025-09-01 21:45:05] Answer preview: Anemia is a common problem in our elderly population, and it is associated with significant morbidity and mortality.
+[2025-09-01 21:45:05] [47/100] Query: What is the treatment for hepatitis B?
+[2025-09-01 21:45:05] Answer preview: If you believe that hepatitis B is the cause of liver cirrhosis, you should consider treating it with interferon alpha.
+[2025-09-01 21:45:05] [48/100] Query: Describe the therapy for ulcerative colitis.
+[2025-09-01 21:45:06] Answer preview: If you have a history of Crohn's disease or a diagnosis of ulcerative colitis, you should consider a diagnosis of inflammatory bowel disease...
+[2025-09-01 21:45:06] [49/100] Query: How is Crohn's disease diagnosed?
+[2025-09-01 21:45:06] Answer preview: Crohn's disease is a form of Crohn's disease that may be difficult to diagnose, but it is a benign disease that may be cured by medical ther...
+[2025-09-01 21:45:06] [50/100] Query: Explain treatment options for pneumonia.
+[2025-09-01 21:45:06] Answer preview: It is important to know the severity of the illness.
+[2025-09-01 21:45:06] [51/100] Query: What is the role of insulin in type 1 diabetes?
+[2025-09-01 21:45:07] Answer preview: The role of once weekly insulin in Type I diabetes is not clear.
+[2025-09-01 21:45:07] [52/100] Query: What are the complications of lupus?
+[2025-09-01 21:45:07] Answer preview: The most frequent complications of lupus are infections (40%), hematological disorders (15%), and cardiovascular disorders (10%).
+[2025-09-01 21:45:07] [53/100] Query: How to prevent tuberculosis?
+[2025-09-01 21:45:08] Answer preview: You should check your patient's blood pressure and body temperature regularly, and if there is a history of tuberculosis, check the chest x-...
+[2025-09-01 21:45:08] [54/100] Query: What is the recommended therapy for GERD?
+[2025-09-01 21:45:08] Answer preview: The recommended treatment is proton pump inhibitors (PPIs).
+[2025-09-01 21:45:08] [55/100] Query: Explain the use of statins in cardiovascular disease.
+[2025-09-01 21:45:08] Answer preview: Explain the use of aspirin in primary prevention.
+[2025-09-01 21:45:08] [56/100] Query: What is the first-line drug for malaria?
+[2025-09-01 21:45:09] Answer preview: Artemisinin combination therapy is the first-line drug for uncomplicated malaria.
+[2025-09-01 21:45:09] [57/100] Query: Describe management of meningitis.
+[2025-09-01 21:45:09] Answer preview: A 4-hour course in pediatric neurocritical care.
+[2025-09-01 21:45:09] [58/100] Query: What is the therapy for endometriosis?
+[2025-09-01 21:45:09] Answer preview: This treatment is effective for the majority of patients and is well tolerated.
+[2025-09-01 21:45:09] [59/100] Query: What are the guidelines for cervical cancer screening?
+[2025-09-01 21:45:09] Answer preview: When a woman presents with a history of cervical cancer, you should consider human papillomavirus vaccination.
+[2025-09-01 21:45:09] [60/100] Query: Explain rehabilitation after myocardial infarction.
+[2025-09-01 21:45:10] Answer preview: When you will tell you that the patient is a medical assistant, you will understand the information that you receive from the medical staff.
+[2025-09-01 21:45:10] [61/100] Query: Describe pain management in cancer patients.
+[2025-09-01 21:45:10] Answer preview: Did you consider pain management in cancer patients?
+[2025-09-01 21:45:10] [62/100] Query: What are the treatments for cataracts?
+[2025-09-01 21:45:10] Answer preview: The most common causes of cataract are age-related cataract, diabetes, and inherited eye disease.
+[2025-09-01 21:45:10] [63/100] Query: How is polycystic ovary syndrome managed?
+[2025-09-01 21:45:11] Answer preview: When a patient is diagnosed with polycystic ovary syndrome, the first step is to determine if she is at risk for diabetes.
+[2025-09-01 21:45:11] [64/100] Query: Explain palliative care in terminal illness.
+[2025-09-01 21:45:11] Answer preview: It is crucial to address the specific symptoms of cancer patients and their family members in order to provide optimal care.
+[2025-09-01 21:45:11] [65/100] Query: What are the side effects of chemotherapy?
+[2025-09-01 21:45:12] Answer preview: For the most part, the adverse effects of chemotherapy are similar to those of radiotherapy.
+[2025-09-01 21:45:12] [66/100] Query: What are the device therapies available for advanced stage heart failure?
+[2025-09-01 21:45:12] Answer preview: The SGLT2 inhibitor empagliflozin has been shown to improve left ventricular function and reduce mortality in patients with heart failure an...
+[2025-09-01 21:45:12] [67/100] Query: How should insulin pump therapy be managed in patients with type 1 diabetes?
+[2025-09-01 21:45:12] Answer preview: The use of once daily insulin injections for type 2 diabetes mellitus is not recommended.
+[2025-09-01 21:45:12] [68/100] Query: How should lifestyle changes be implemented in patients with hypertension?
+[2025-09-01 21:45:13] Answer preview: The results of this study provide evidence that lifestyle changes can be implemented in patients with hypertension in primary care settings.
+[2025-09-01 21:45:13] [69/100] Query: What are the indications for long-term oxygen therapy in patients with COPD?
+[2025-09-01 21:45:13] Answer preview: There is no evidence for an association between long-term oxygen therapy and mortality.
+[2025-09-01 21:45:13] [70/100] Query: What is the stepwise approach to asthma control according to clinical guidelines?
+[2025-09-01 21:45:14] Answer preview: The steps are (1) Step 1: use a combination of bronchodilators, inhaled steroids, and long-acting beta 2-agonists to achieve a clinically ef...
+[2025-09-01 21:45:14] [71/100] Query: How should treatment be planned for multidrug-resistant tuberculosis?
+[2025-09-01 21:45:15] Answer preview: What is the best diagnostic test for multidrug-resistant tuberculosis?
+[2025-09-01 21:45:15] [72/100] Query: What are the management strategies for stroke rehabilitation?
+[2025-09-01 21:45:16] Answer preview: The management strategies for stroke rehabilitation should include the following: (1) Early recognition and treatment of stroke, (2) Rehabil...
+[2025-09-01 21:45:16] [73/100] Query: How is palliative care integrated into cancer treatment plans?
+[2025-09-01 21:45:16] Answer preview: You should always discuss palliative care with patients.
+[2025-09-01 21:45:16] [74/100] Query: What are the current recommendations for the management of chronic kidney disease?
+[2025-09-01 21:45:17] Answer preview: There is no evidence to suggest that early intervention with dialysis or transplantation in patients with chronic kidney disease is benefici...
+[2025-09-01 21:45:17] [75/100] Query: How should anticoagulation be managed in patients with atrial fibrillation?
+[2025-09-01 21:45:17] Answer preview: Patients with atrial fibrillation have a much higher risk of stroke than those without, and they should be monitored closely.
+[2025-09-01 21:45:17] [76/100] Query: What is the latest guideline for breast cancer screening in high-risk populations?
+[2025-09-01 21:45:18] Answer preview: For the general population, it is recommended to use the breast cancer screening guidelines from the American College of Radiology (ACR).
+[2025-09-01 21:45:18] [77/100] Query: How should biologic therapies be used in rheumatoid arthritis?
+[2025-09-01 21:45:18] Answer preview: When a patient has an adverse reaction to a biologic agent, say you should consider stopping the drug, say you should consider switching to ...
+[2025-09-01 21:45:18] [78/100] Query: Describe the role of continuous glucose monitoring in type 1 diabetes management.
+[2025-09-01 21:45:19] Answer preview: Ask how to select a type 1 diabetes management algorithm for your patient.
+[2025-09-01 21:45:19] [79/100] Query: What are the surgical options for advanced colorectal cancer?
+[2025-09-01 21:45:19] Answer preview: As a surgical treatment, it is not only the best way to provide a cure but also to improve the quality of life of patients with advanced col...
+[2025-09-01 21:45:19] [80/100] Query: How should statin therapy be adjusted in elderly patients?
+[2025-09-01 21:45:20] Answer preview: If you have a history of stroke or transient ischemic attack, then you should consider prescribing a statin.
+[2025-09-01 21:45:20] [81/100] Query: What are the recommendations for vaccination in immunocompromised patients?
+[2025-09-01 21:45:20] Answer preview: All patients with human immunodeficiency virus (HIV) infection and AIDS should be vaccinated against tetanus and diphtheria.
+[2025-09-01 21:45:20] [82/100] Query: Describe the stepwise pharmacologic therapy for heart failure.
+[2025-09-01 21:45:21] Answer preview: If the patient's symptoms are consistent with heart failure, say you must start with the best tolerated drug and then increase your dosage t...
+[2025-09-01 21:45:21] [83/100] Query: How should acute ischemic stroke be managed within the first 24 hours?
+[2025-09-01 21:45:21] Answer preview: You can make a decision on whether to admit or discharge your patient with the diagnosis of acute ischemic stroke based on the clinical cour...
+[2025-09-01 21:45:21] [84/100] Query: What are the strategies for preventing diabetic foot ulcers?
+[2025-09-01 21:45:22] Answer preview: A diabetic foot ulcer is a common complication of diabetes mellitus.
+[2025-09-01 21:45:22] [85/100] Query: Explain multidisciplinary care in amyotrophic lateral sclerosis.
+[2025-09-01 21:45:22] Answer preview: Consider the following: amyotrophic lateral sclerosis: The patient will benefit from multidisciplinary care.
+[2025-09-01 21:45:22] [86/100] Query: How should depression be managed in patients with chronic illness?
+[2025-09-01 21:45:22] Answer preview: You should be cautious when using antidepressants.
+[2025-09-01 21:45:22] [87/100] Query: What are the updates in the management of severe sepsis?
+[2025-09-01 21:45:23] Answer preview: The update for severe sepsis is a systematic review of the literature, with a focus on new evidence.
+[2025-09-01 21:45:23] [88/100] Query: Describe non-pharmacologic interventions for dementia care.
+[2025-09-01 21:45:23] Answer preview: Assess the impact of non-pharmacologic interventions for dementia care in the home.
+[2025-09-01 21:45:23] [89/100] Query: How should anticoagulant reversal be performed in bleeding patients?
+[2025-09-01 21:45:23] Answer preview: It is necessary to identify the anticoagulant used, the type of bleeding, and the time of administration of the drug.
+[2025-09-01 21:45:23] [90/100] Query: What are the dietary recommendations for chronic kidney disease?
+[2025-09-01 21:45:24] Answer preview: The recommended dietary guidelines are protein intake of 1.2-1.5 g / kg / day and the recommended level of protein intake for adults is 0.8-...
+[2025-09-01 21:45:24] [91/100] Query: How should antiretroviral therapy be modified in drug-resistant HIV?
+[2025-09-01 21:45:24] Answer preview: In case of failure, you should consider adding another drug to the regimen.
+[2025-09-01 21:45:24] [92/100] Query: Describe the post-operative care after coronary artery bypass surgery.
+[2025-09-01 21:45:25] Answer preview: In a comprehensive approach, you will be able to answer questions about the patient's recovery from surgery, and how to monitor the patient'...
+[2025-09-01 21:45:25] [93/100] Query: What are the strategies for reducing hospital readmission in COPD?
+[2025-09-01 21:45:25] Answer preview: Although the evidence base for reducing readmission in COPD is limited, it is clear that a number of interventions are effective in reducing...
+[2025-09-01 21:45:25] [94/100] Query: Explain guideline-based management of gestational diabetes.
+[2025-09-01 21:45:26] Answer preview: The standard of care for gestational diabetes: It is safe to treat the woman and her baby as per current guidelines.
+[2025-09-01 21:45:26] [95/100] Query: How should pediatric asthma be treated according to the latest guidelines?
+[2025-09-01 21:45:26] Answer preview: It is important to remember that the treatment of asthma has been modified in recent years.
+[2025-09-01 21:45:26] [96/100] Query: Describe infection control measures in tuberculosis wards.
+[2025-09-01 21:45:26] Answer preview: Describe a method for recording and reporting suspected tuberculosis cases to the Public Health Agency of Canada.
+[2025-09-01 21:45:26] [97/100] Query: What are the surgical interventions for severe obesity?
+[2025-09-01 21:45:27] Answer preview: The most common surgical interventions for severe obesity are gastric bypass and vertical banded gastroplasty.
+[2025-09-01 21:45:27] [98/100] Query: How should cancer pain be assessed and managed?
+[2025-09-01 21:45:27] Answer preview: The most common pain assessment tools are the Brief Pain Inventory, the Edmonton Symptom Assessment System, and the Brief Pain Inventory-Sho...
+[2025-09-01 21:45:27] [99/100] Query: Explain the role of telemedicine in rural healthcare delivery.
+[2025-09-01 21:45:27] Answer preview: Are there differences in patient satisfaction between rural and urban medical assistants?
+[2025-09-01 21:45:27] [100/100] Query: What are the ethical considerations in end-of-life care?
+[2025-09-01 21:45:28] Answer preview: The patient should be informed that his / her wishes and values are not respected and that he / she has not been informed about end-of-life ...
+[2025-09-01 21:45:28] Saved results to /home/arslanhasancelal/medical_rag/tests/results/perf_results.csv
+[2025-09-01 21:45:28] Stopping docker compose...
+[2025-09-01 21:45:28] Test run complete.

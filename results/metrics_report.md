@@ -12,4 +12,8 @@
 
 - **Perplexity (unigram proxy)**: 282.9029
 - **BLEU**: 0.0066
+- **ROUGE-1 F1**: 0.1115
+- **ROUGE-2 F1**: 0.0224
+- **ROUGE-L F1**: 0.0869
+- **METEOR**: 
 - **BERTScore** (P/R/F1): 0.1932 / -0.3829 / -0.1138
