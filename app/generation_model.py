@@ -2,7 +2,7 @@
 
 from typing import Any, List, Optional, Sequence
 from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
-import torch, re
+import torch, re, os
 
 PROMPT_TMPL = """You are a medical assistant.
 Answer the QUESTION strictly using only facts in CONTEXT.
@@ -22,16 +22,14 @@ Provide 3–6 sentences. If uncertain, say you are not certain.
 QUESTION: {question}
 ANSWER:"""
 
-
 _num_re = re.compile(r"\d+(?:\.\d+)?%?")
 _word_re = re.compile(r"[A-Za-zğüşöçıİĞÜŞÖÇ0-9]+")
 
-
 _STOPWORDS = {
-    
+    # EN
     "the","a","an","and","or","of","to","in","for","on","with","as","by","at","from","that","this","be","is","are","was","were","it",
-    
-    "ve","veya","ile","için","da","de","bu","şu","o","bir","olan","olarak","gibi","ile","ama","fakat","ancak","ya","ile","en",
+    # TR
+    "ve","veya","ile","için","da","de","bu","şu","o","bir","olan","olarak","gibi","ama","fakat","ancak","ya","en",
 }
 
 def _coerce_texts(docs: Sequence[Any]) -> List[str]:
@@ -88,7 +86,7 @@ def _strip_unseen_numbers(answer: str, allowed_nums: set[str]) -> str:
     keep = []
     for s in sents:
         nums = _numbers(s)
-        
+        # drop sentence if it introduces numbers not present in context
         if nums and any(n not in allowed_nums for n in nums):
             continue
         keep.append(s)
@@ -115,7 +113,6 @@ def _filter_sentences_not_in_context(answer: str, context_text: str, min_overlap
     cleaned = " ".join(kept).strip()
     return cleaned if cleaned else answer  # fall back to original if all dropped
 
-# ...existing code...
 
 class Generator:
     def __init__(self, model_id: str = "microsoft/BioGPT",
@@ -126,40 +123,72 @@ class Generator:
             device = "cuda" if torch.cuda.is_available() else "cpu"
         self.device = device
 
+        # dtype: on CUDA prefer bf16 if supported, else fp16; CPU uses fp32
         if self.device == "cuda":
             torch_dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
         else:
             torch_dtype = torch.float32
 
-        self.tokenizer = AutoTokenizer.from_pretrained(model_id, use_fast=False)
+        is_biogpt = "biogpt" in (self.model_id or "").lower()
+
+        # Tokenizer: BioGPT has no fast tokenizer -> use_fast=False there
+        tok_kwargs = {"use_fast": False} if is_biogpt else {}
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_id, **tok_kwargs)
         if self.tokenizer.pad_token_id is None and self.tokenizer.eos_token_id is not None:
             self.tokenizer.pad_token_id = self.tokenizer.eos_token_id
 
-        self.model = AutoModelForCausalLM.from_pretrained(
-            model_id,
-            device_map="auto" if self.device != "cpu" else None,
+        common_kwargs = dict(
             low_cpu_mem_usage=True,
             torch_dtype=torch_dtype,
             offload_folder=offload_folder,
+            trust_remote_code=False,
         )
+
+        try:
+            if is_biogpt:
+                # BioGPT does NOT support device_map='auto' → load on single device
+                # Some BioGPT weights are picky with fp16/bf16; if it fails, we fall back to fp32 below.
+                if self.device == "cpu":
+                    common_kwargs["torch_dtype"] = torch.float32
+                self.model = AutoModelForCausalLM.from_pretrained(self.model_id, **common_kwargs)
+                self.model.to(self.device)
+            else:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.model_id,
+                    device_map=("auto" if self.device != "cpu" else None),
+                    **common_kwargs,
+                )
+        except Exception as e:
+            # Generic fallback: most robust path → fp32 on a single device
+            self.model = AutoModelForCausalLM.from_pretrained(
+                self.model_id,
+                low_cpu_mem_usage=True,
+                torch_dtype=torch.float32,
+                trust_remote_code=False,
+                offload_folder=offload_folder,
+            )
+            self.model.to(self.device)
+
         self.model.eval()
 
-        # --------- UPDATED: Remove device argument from pipeline ----------
+        # CUDA speed hint
+        if self.device == "cuda":
+            torch.backends.cuda.matmul.allow_tf32 = True
+
+        # Pipeline will use the model as-is (already on device if applicable)
         self.pipe = pipeline(
             "text-generation",
             model=self.model,
-            tokenizer=self.tokenizer
-            # device argument removed for accelerate compatibility
+            tokenizer=self.tokenizer,
+            device=(0 if self.device == "cuda" else -1),  # GPU varsa 0, yoksa CPU
         )
-        # ---------------------------------------------------------------
+
 
         # longer answers
         self.max_input_tokens = min(getattr(self.tokenizer, "model_max_length", 1024), 1024) - 96
         self.max_new_tokens = 512
 
-        print(f"[Generator] Loaded on {self.device.upper()} with {torch_dtype} precision.")
-
-# ...rest of the code unchanged...
+        print(f"[Generator] Loaded {self.model_id} on {self.device.upper()} with {self.model.dtype} precision.")
 
     def _truncate_prompt(self, prompt: str) -> str:
         toks = self.tokenizer(prompt, add_special_tokens=False, return_tensors="pt")["input_ids"][0]
@@ -198,7 +227,7 @@ class Generator:
         ctx_is_relevant = have_docs and bool(query_text) and _context_relevant(query_text, docs)
 
         if not ctx_is_relevant:
-            #  BioGPT-only prevents the irrelevant answer 
+            #  fallback (no/low context overlap)
             fb_prompt = FALLBACK_TMPL.format(question=query_text or prompt or "")
             if max_new_tokens is None:
                 max_new_tokens = self._dynamic_token_cap(query_text)
@@ -214,7 +243,7 @@ class Generator:
             fb_raw = self._generate_text(fb_prompt, **gen_kwargs)
             return fb_raw.strip()
 
-        # normal RAG 
+        # normal RAG
         if prompt is None and query_text:
             prompt = build_prompt(query_text, docs)
 
@@ -245,7 +274,7 @@ class Generator:
 
         raw = self._generate_text(safe_prompt, **gen_kwargs)
 
-        
+        # cleanup relative to context
         ctx_start = safe_prompt.find("CONTEXT:")
         ctx_end = safe_prompt.find("\n\nQUESTION:")
         context_text = safe_prompt[ctx_start:ctx_end] if (ctx_start != -1 and ctx_end != -1) else safe_prompt
